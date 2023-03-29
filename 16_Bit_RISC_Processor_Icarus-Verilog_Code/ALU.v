@@ -3,7 +3,7 @@
 // Verilog code for RISC Processor 
 // Verilog code for ALU
 module ALU(
- input  [15:0] a,  //src1
+ input  [15:0] c,  //src1
  input  [15:0] b,  //src2
  input  [2:0] alu_control, //function sel
  
