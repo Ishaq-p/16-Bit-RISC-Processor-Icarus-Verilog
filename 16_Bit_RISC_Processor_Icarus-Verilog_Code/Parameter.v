@@ -9,5 +9,6 @@
 `define row_d 8 // The number of data in data memory. We only use 8 data. Do not change this number. You can change the value of each data inside test.data file. Total number is fixed at 8. 
 `define filename "./test/50001111_50001212.o"
 `define simulation_time #160
+`define RESET_WIDTH 1
 
 `endif

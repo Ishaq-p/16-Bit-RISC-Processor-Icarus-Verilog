@@ -6,7 +6,7 @@
 module Control_Unit(
       input[3:0] opcode,
       output reg[1:0] alu_op,
-      output reg jump,beq,bne,mem_read,mem_write,alu_src,reg_dst,mem_to_reg,reg_write    
+      output reg jump,beq,bne,mem_read,mem_write,alu_src,reg_dst,mem_to_reg,reg_write, set_less_than  
     );
 
 
@@ -181,7 +181,21 @@ begin
     bne = 1'b0;
     alu_op = 2'b00;
     jump = 1'b1;   
-   end   
+   end
+   4'b1110:  // set less than
+    begin
+        reg_dst = 1'b1;
+        alu_src = 1'b0;
+        mem_to_reg = 1'b0;
+        reg_write = 1'b1;
+        mem_read = 1'b0;
+        mem_write = 1'b0;
+        beq = 1'b0;
+        bne = 1'b0;
+        alu_op = 2'b11;
+        jump = 1'b0;
+        set_less_than = 1'b1;
+    end   
  default: begin
     reg_dst = 1'b1;
     alu_src = 1'b0;

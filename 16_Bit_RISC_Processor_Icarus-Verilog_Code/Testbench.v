@@ -9,17 +9,22 @@ module test_Risc_16_bit;
 
  // Inputs
  reg clk;
+ reg reset;
 
  // Instantiate the Unit Under Test (UUT)
  Risc_16_bit uut (
-  .clk(clk)
+  .clk(clk),
+  .reset(reset)
  );
 
  initial 
   begin
     $dumpfile("RISC_16_bit.vcd");
     $dumpvars(0, uut);
-   clk <=0;
+    // Apply reset for 2 clock cycles
+    reset <= 1;
+    clk <= 0;
+    reset <= 0;
    `simulation_time;
    $finish;
    $display("Test complete!");

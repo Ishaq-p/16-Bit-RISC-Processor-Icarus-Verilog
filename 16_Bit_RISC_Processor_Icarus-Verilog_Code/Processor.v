@@ -6,6 +6,7 @@
 // Verilog code for RISC Processor 
 
 module Risc_16_bit(
+ input reset,
  input clk
 );
  wire jump,bne,beq,mem_read,mem_write,alu_src,reg_dst,mem_to_reg,reg_write;
@@ -15,6 +16,7 @@ module Risc_16_bit(
  Datapath_Unit DU
  (
   .clk(clk),
+  .reset(reset),
   .jump(jump),
   .beq(beq),
   .mem_read(mem_read),

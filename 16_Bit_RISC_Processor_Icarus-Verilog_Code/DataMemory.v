@@ -6,6 +6,7 @@
 // Verilog code for data Memory
 module Data_Memory(
  input clk,
+ input reset,
  // address input, shared by read and write port
  input [15:0]   mem_access_addr,
  
@@ -41,7 +42,7 @@ initial
  // $fclose(f);
  end
  
- always @(posedge clk) begin
+ always @(posedge clk or reset) begin
   if (mem_write_en)
    memory[ram_addr] <= mem_write_data;
  end

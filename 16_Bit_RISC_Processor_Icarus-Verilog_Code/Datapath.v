@@ -10,6 +10,7 @@
 // Verilog code for Data Path of the processor
 module Datapath_Unit(
  input clk,
+ input reset,
  input jump,beq,mem_read,mem_write,alu_src,reg_dst,mem_to_reg,reg_write,bne,
  input[1:0] alu_op,
  output[3:0] opcode
@@ -24,7 +25,7 @@ module Datapath_Unit(
  wire [2:0] reg_read_addr_2;
  wire [15:0] reg_read_data_2;
  wire [15:0] ext_im,read_data2;
- wire [2:0] ALU_Control;
+ wire [3:0] ALU_Control;
  wire [15:0] ALU_out;
  wire zero_flag;
  wire [15:0] PC_j, PC_beq, PC_2beq,PC_2bne,PC_bne;
@@ -54,6 +55,7 @@ module Datapath_Unit(
  GPRs reg_file
  (
   .clk(clk),
+  .reset(reset),
   .reg_write_en(reg_write),
   .reg_write_dest(reg_write_dest),
   .reg_write_data(reg_write_data),
@@ -89,6 +91,7 @@ module Datapath_Unit(
   Data_Memory dm
    (
     .clk(clk),
+    .reset(reset),
     .mem_access_addr(ALU_out),
     .mem_write_data(reg_read_data_2),
     .mem_write_en(mem_write),
