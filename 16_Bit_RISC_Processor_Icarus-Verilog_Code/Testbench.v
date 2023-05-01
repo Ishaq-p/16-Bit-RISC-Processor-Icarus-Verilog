@@ -24,6 +24,7 @@ module test_Risc_16_bit;
     // Apply reset for 2 clock cycles
     reset <= 1;
     clk <= 0;
+    #1
     reset <= 0;
    `simulation_time;
    $finish;

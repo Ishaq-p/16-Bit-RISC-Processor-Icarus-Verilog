@@ -38,8 +38,8 @@ module GPRs(
     assign reg7 = reg_array[7];
 
     // write port
-    always @ (posedge clk or negedge reset) begin
-        if(~reset) begin
+    always @ (posedge clk or posedge reset) begin
+        if(reset) begin
             for(i=0;i<8;i=i+1) begin
                 reg_array[i] <= 16'd0;
             end

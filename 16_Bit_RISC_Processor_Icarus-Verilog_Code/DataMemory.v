@@ -42,7 +42,7 @@ initial
  // $fclose(f);
  end
  
- always @(posedge clk or reset) begin
+ always @(posedge clk ) begin
   if (mem_write_en)
    memory[ram_addr] <= mem_write_data;
  end

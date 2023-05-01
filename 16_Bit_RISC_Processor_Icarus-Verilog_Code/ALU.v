@@ -24,6 +24,9 @@ begin
  4'b0111: begin if (a<b) result = 16'd1;
     else result = 16'd0;
     end
+ 4'b1000: begin if (a>b) result = 16'd8; // added instruction
+    else result = 16'd9;
+    end
  default:result = a + b; // add
  endcase
 end
