@@ -13,3 +13,4 @@
 1011_0000_0100_0001 // BEQ branch to jump if R0=R1, PCnew= PC+2+offset<<1 = 28 => offset = 1
 1100_0000_0100_0000 // BNE branch to jump if R0!=R1, PCnew= PC+2+offset<<1 = 28 => offset = 0
 1101_0000_0000_0000 // J jump to the beginning address
+1001_0000_0111_0000 // SGT R2 <- 9 if R0 < R1 

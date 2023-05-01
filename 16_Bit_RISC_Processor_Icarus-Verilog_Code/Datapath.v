@@ -17,7 +17,7 @@ module Datapath_Unit(
 );
  reg  [15:0] pc_current;
  wire [15:0] pc_next,pc2;
- wire [15:0] instr;
+ wire [16:0] instr;
  wire [2:0] reg_write_dest;
  wire [15:0] reg_write_data;
  wire [2:0] reg_read_addr_1;
