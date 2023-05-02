@@ -6,7 +6,7 @@
 // Verilog code for Instruction Memory
 module Instruction_Memory(
  input[15:0] pc,
- output[16:0] instruction
+ output[15:0] instruction
 );
 
  reg [`col - 1:0] memory [0:`row_i - 1];

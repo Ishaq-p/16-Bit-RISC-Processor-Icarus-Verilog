@@ -17,7 +17,7 @@ module Datapath_Unit(
 );
  reg  [15:0] pc_current;
  wire [15:0] pc_next,pc2;
- wire [16:0] instr;
+ wire [15:0] instr;
  wire [2:0] reg_write_dest;
  wire [15:0] reg_write_data;
  wire [2:0] reg_read_addr_1;
@@ -25,7 +25,7 @@ module Datapath_Unit(
  wire [2:0] reg_read_addr_2;
  wire [15:0] reg_read_data_2;
  wire [15:0] ext_im,read_data2;
- wire [3:0] ALU_Control;
+ wire [4:0] ALU_Control;
  wire [15:0] ALU_out;
  wire zero_flag;
  wire [15:0] PC_j, PC_beq, PC_2beq,PC_2bne,PC_bne;

@@ -5,7 +5,7 @@
 // ALU_Control Verilog code
 
 module alu_control(
-  output reg [3:0] ALU_Cnt,
+  output reg [4:0] ALU_Cnt,
   input [1:0] ALUOp,
   input [3:0] Opcode
 );
@@ -25,7 +25,7 @@ module alu_control(
       6'b000111: ALU_Cnt = 4'b0101;
       6'b001000: ALU_Cnt = 4'b0110;
       6'b001001: ALU_Cnt = 4'b0111;
-      6'b001110: ALU_Cnt = 4'b1000; //added instruction
+      6'b001010: ALU_Cnt = 4'b1000; //added instruction
       default: ALU_Cnt = 4'b0000;
     endcase
   end

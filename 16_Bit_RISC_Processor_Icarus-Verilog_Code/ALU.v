@@ -5,7 +5,7 @@
 module ALU(
  input  [15:0] a,  //src1
  input  [15:0] b,  //src2
- input  [3:0] alu_control, //function sel
+ input  [4:0] alu_control, //function sel
  
  output reg [15:0] result,  //result 
  output zero
@@ -21,10 +21,10 @@ begin
  4'b0100: result = a>>b;
  4'b0101: result = a & b; // and
  4'b0110: result = a | b; // or
- 4'b0111: begin if (a<b) result = 16'd1;
-    else result = 16'd0;
+ 4'b1000: begin if (a<b) result = 16'd7;
+    else result = 16'd5;
     end
- 4'b1000: begin if (a>b) result = 16'd8; // added instruction
+ 4'b0111: begin if (a == b) result = 16'd8; // added instruction
     else result = 16'd9;
     end
  default:result = a + b; // add
