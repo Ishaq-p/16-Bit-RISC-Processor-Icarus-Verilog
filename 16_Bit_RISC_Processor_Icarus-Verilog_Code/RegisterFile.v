@@ -8,13 +8,13 @@ module GPRs(
     input    reset,
     // write port
     input    reg_write_en,
-    input  [2:0] reg_write_dest,
+    input  [3:0] reg_write_dest,
     input  [15:0] reg_write_data,
     //read port 1
-    input  [2:0] reg_read_addr_1,
+    input  [3:0] reg_read_addr_1,
     output  [15:0] reg_read_data_1,
     //read port 2
-    input  [2:0] reg_read_addr_2,
+    input  [3:0] reg_read_addr_2,
     output  [15:0] reg_read_data_2
 );
     reg [15:0] reg_array [0:7];

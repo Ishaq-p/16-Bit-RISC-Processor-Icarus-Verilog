@@ -18,14 +18,14 @@ module Datapath_Unit(
  reg  [15:0] pc_current;
  wire [15:0] pc_next,pc2;
  wire [15:0] instr;
- wire [2:0] reg_write_dest;
+ wire [3:0] reg_write_dest;
  wire [15:0] reg_write_data;
- wire [2:0] reg_read_addr_1;
+ wire [3:0] reg_read_addr_1;
  wire [15:0] reg_read_data_1;
- wire [2:0] reg_read_addr_2;
+ wire [3:0] reg_read_addr_2;
  wire [15:0] reg_read_data_2;
  wire [15:0] ext_im,read_data2;
- wire [4:0] ALU_Control;
+ wire [3:0] ALU_Control;
  wire [15:0] ALU_out;
  wire zero_flag;
  wire [15:0] PC_j, PC_beq, PC_2beq,PC_2bne,PC_bne;
@@ -73,8 +73,8 @@ module Datapath_Unit(
  // ALU 
  ALU alu_unit(.a(reg_read_data_1),.b(read_data2),.alu_control(ALU_Control),.result(ALU_out),.zero(zero_flag));
  // PC beq add
- assign PC_beq = pc2 + {ext_im[14:0],1'b0};
- assign PC_bne = pc2 + {ext_im[14:0],1'b0};
+ assign PC_beq = pc2 + {ext_im[15:0],1'b0};
+ assign PC_bne = pc2 + {ext_im[15:0],1'b0};
  // beq control
  assign beq_control = beq & zero_flag;
  assign bne_control = bne & (~zero_flag);
